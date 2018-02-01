@@ -12,6 +12,21 @@ Package perl-Error.noarch 1:0.17020-2.el7 will be installed
 ---> Package perl-Git.noarch 0:1.8.3.1-12.el7_4 will be installed
 ---> Package perl-TermReadKey.x86_64 0:2.30-20.el7 will be installed
 
+docker install
+---> Package docker.x86_64 2:1.12.6-71.git3e8e77d.el7.centos.1 will be installed
+--> Processing Dependency: docker-common = 2:1.12.6-71.git3e8e77d.el7.centos.1 for package: 2:docker-1.12.6-71.git3e8e77d.el7.centos.1.x86_64
+--> Processing Dependency: docker-client = 2:1.12.6-71.git3e8e77d.el7.centos.1 for package: 2:docker-1.12.6-71.git3e8e77d.el7.centos.1.x86_64
+--> Running transaction check
+---> Package docker-client.x86_64 2:1.12.6-71.git3e8e77d.el7.centos.1 will be installed
+---> Package docker-common.x86_64 2:1.12.6-71.git3e8e77d.el7.centos.1 will be installed
+--> Processing Dependency: oci-register-machine >= 1:0-3.14 for package: 2:docker-common-1.12.6-71.git3e8e77d.el7.centos.1.x86_64
+--> Processing Dependency: container-selinux >= 2:2.21-2 for package: 2:docker-common-1.12.6-71.git3e8e77d.el7.centos.1.x86_64
+--> Running transaction check
+---> Package container-selinux.noarch 2:2.36-1.gitff95335.el7 will be installed
+---> Package oci-register-machine.x86_64 1:0-3.13.gitcd1e331.el7 will be updated
+---> Package oci-register-machine.x86_64 1:0-3.14.gitcd1e331.el7 will be an update
+
+
 
 [redhat@localhost ~]$ oc cluster up
 Starting OpenShift using openshift/origin:v3.6.0 ...
