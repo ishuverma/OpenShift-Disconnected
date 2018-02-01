@@ -90,5 +90,133 @@ E0201 02:24:51.584102    4015 controllermanager.go:337] Server isn't healthy yet
 2018-02-01 02:24:51.602487 I | etcdserver/api/v3rpc: grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 192.168.122.1:4001: getsockopt: connection refused"; Reconnecting to {192.168.122.1:4001 <nil>}
 F0201 02:24:51.602614    4015 start_allinone.go:99] Server could not start: Unable to find suitable network address.error='Unable to select an IP.'. Try to set the AdvertiseAddress directly or provide a valid BindAddress to fix this.
 
+With network enabled:
+
+[redhat@localhost openshift-origin-v3.6.1]$ sudo ./openshift start --master-config=openshift.local.config/master/master-config.yaml --node-config=openshift.local.config/node-localhost.localdomain/node-config.yaml &
+[1] 18160
+[redhat@localhost openshift-origin-v3.6.1]$ W0201 15:34:14.109333   18169 start_master.go:297] Warning: assetConfig.loggingPublicURL: Invalid value: "": required to view aggregated container logs in the console, master start will continue.
+W0201 15:34:14.109440   18169 start_master.go:297] Warning: assetConfig.metricsPublicURL: Invalid value: "": required to view cluster metrics in the console, master start will continue.
+W0201 15:34:14.109449   18169 start_master.go:297] Warning: auditConfig.auditFilePath: Required value: audit can not be logged to a separate file, master start will continue.
+I0201 15:34:14.117399   18169 plugins.go:101] No cloud provider specified.
+E0201 15:34:14.130701   18169 controllermanager.go:337] Server isn't healthy yet.  Waiting a little while.
+2018-02-01 15:34:14.149414 I | etcdserver/api/v3rpc: grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 192.168.122.1:4001: getsockopt: connection refused"; Reconnecting to {192.168.122.1:4001 <nil>}
+2018-02-01 15:34:14.153325 I | etcdserver/api/v3rpc: grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 192.168.122.1:4001: getsockopt: connection refused"; Reconnecting to {192.168.122.1:4001 <nil>}
+2018-02-01 15:34:14.153380 I | etcdserver/api/v3rpc: grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 192.168.122.1:4001: getsockopt: connection refused"; Reconnecting to {192.168.122.1:4001 <nil>}
+2018-02-01 15:34:14.153404 I | etcdserver/api/v3rpc: grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 192.168.122.1:4001: getsockopt: connection refused"; Reconnecting to {192.168.122.1:4001 <nil>}
+2018-02-01 15:34:14.153841 I | etcdserver/api/v3rpc: grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 192.168.122.1:4001: getsockopt: connection refused"; Reconnecting to {192.168.122.1:4001 <nil>}
+2018-02-01 15:34:14.869212 I | etcdserver/api/v3rpc: grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 192.168.122.1:4001: getsockopt: connection refused"; Reconnecting to {192.168.122.1:4001 <nil>}
+I0201 15:34:14.869538   18169 start_master.go:529] Starting master on 0.0.0.0:8443 (v3.6.1+008f2d5)
+I0201 15:34:14.869559   18169 start_master.go:530] Public master address is https://192.168.122.1:8443
+2018-02-01 15:34:14.869668 I | etcdserver/api/v3rpc: grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 192.168.122.1:4001: getsockopt: connection refused"; Reconnecting to {192.168.122.1:4001 <nil>}
+I0201 15:34:14.872409   18169 start_master.go:534] Using images from "openshift/origin-<component>:v3.6.1"
+2018-02-01 15:34:14.872810 I | embed: peerTLS: cert = openshift.local.config/master/etcd.server.crt, key = openshift.local.config/master/etcd.server.key, ca = openshift.local.config/master/ca.crt, trusted-ca = , client-cert-auth = true
+2018-02-01 15:34:14.875122 I | embed: listening for peers on https://0.0.0.0:7001
+2018-02-01 15:34:14.875193 I | embed: listening for client requests on 0.0.0.0:4001
+2018-02-01 15:34:14.923076 I | etcdserver: name = openshift.local
+2018-02-01 15:34:14.923094 I | etcdserver: data dir = /opt/openshift-origin-v3.6.1/openshift.local.etcd
+2018-02-01 15:34:14.923099 I | etcdserver: member dir = /opt/openshift-origin-v3.6.1/openshift.local.etcd/member
+2018-02-01 15:34:14.923102 I | etcdserver: heartbeat = 100ms
+2018-02-01 15:34:14.923106 I | etcdserver: election = 1000ms
+2018-02-01 15:34:14.923109 I | etcdserver: snapshot count = 100000
+2018-02-01 15:34:14.923126 I | etcdserver: advertise client URLs = https://192.168.122.1:4001
+2018-02-01 15:34:15.001795 I | etcdserver: restarting member ac09168d893fe4e2 in cluster 6717f07ade2a086e at commit index 457
+2018-02-01 15:34:15.007345 I | raft: ac09168d893fe4e2 became follower at term 3
+2018-02-01 15:34:15.007375 I | raft: newRaft ac09168d893fe4e2 [peers: [], term: 3, commit: 457, applied: 0, lastindex: 457, lastterm: 3]
+2018-02-01 15:34:15.032912 W | auth: simple token is not cryptographically signed
+2018-02-01 15:34:15.036498 I | etcdserver: starting server... [version: 3.2.1, cluster version: to_be_decided]
+2018-02-01 15:34:15.036538 I | embed: ClientTLS: cert = openshift.local.config/master/etcd.server.crt, key = openshift.local.config/master/etcd.server.key, ca = openshift.local.config/master/ca.crt, trusted-ca = , client-cert-auth = true
+2018-02-01 15:34:15.044785 I | etcdserver/membership: added member ac09168d893fe4e2 [https://192.168.122.1:7001] to cluster 6717f07ade2a086e
+2018-02-01 15:34:15.044917 N | etcdserver/membership: set the initial cluster version to 3.2
+2018-02-01 15:34:15.044950 I | etcdserver/api: enabled capabilities for version 3.2
+2018-02-01 15:34:15.109788 I | raft: ac09168d893fe4e2 is starting a new election at term 3
+2018-02-01 15:34:15.116039 I | raft: ac09168d893fe4e2 became candidate at term 4
+2018-02-01 15:34:15.119728 I | raft: ac09168d893fe4e2 received MsgVoteResp from ac09168d893fe4e2 at term 4
+2018-02-01 15:34:15.119776 I | raft: ac09168d893fe4e2 became leader at term 4
+2018-02-01 15:34:15.119793 I | raft: raft.node: ac09168d893fe4e2 elected leader ac09168d893fe4e2 at term 4
+2018-02-01 15:34:15.120286 I | etcdserver: published {Name:openshift.local ClientURLs:[https://192.168.122.1:4001]} to cluster 6717f07ade2a086e
+I0201 15:34:15.120340   18169 run.go:85] Started etcd at 192.168.122.1:4001
+2018-02-01 15:34:15.120829 I | embed: ready to serve client requests
+2018-02-01 15:34:15.121399 I | embed: serving client requests on [::]:4001
+E0201 15:34:15.193038   18169 controllermanager.go:337] Server isn't healthy yet.  Waiting a little while.
+2018-02-01 15:34:15.253130 I | etcdserver/api/v3rpc: Failed to dial [::]:4001: connection error: desc = "transport: remote error: tls: bad certificate"; please retry.
+2018-02-01 15:34:15.257096 I | etcdserver/api/v3rpc: Failed to dial [::]:4001: connection error: desc = "transport: remote error: tls: bad certificate"; please retry.
+2018-02-01 15:34:15.259766 I | etcdserver/api/v3rpc: Failed to dial [::]:4001: connection error: desc = "transport: remote error: tls: bad certificate"; please retry.
+2018-02-01 15:34:15.263392 I | etcdserver/api/v3rpc: Failed to dial [::]:4001: connection error: desc = "transport: remote error: tls: bad certificate"; please retry.
+2018-02-01 15:34:15.265044 I | etcdserver/api/v3rpc: Failed to dial [::]:4001: connection error: desc = "transport: remote error: tls: bad certificate"; please retry.
+2018-02-01 15:34:15.265359 I | etcdserver/api/v3rpc: Failed to dial [::]:4001: connection error: desc = "transport: remote error: tls: bad certificate"; please retry.
+2018-02-01 15:34:15.265397 I | etcdserver/api/v3rpc: Failed to dial [::]:4001: connection error: desc = "transport: remote error: tls: bad certificate"; please retry.
+2018-02-01 15:34:15.265417 I | etcdserver/api/v3rpc: Failed to dial [::]:4001: connection error: desc = "transport: remote error: tls: bad certificate"; please retry.
+I0201 15:34:15.267659   18169 run_components.go:91] Using default project node label selector: 
+E0201 15:34:15.279575   18169 reflector.go:201] github.com/openshift/origin/pkg/quota/generated/informers/internalversion/factory.go:45: Failed to list *quota.ClusterResourceQuota: Get https://192.168.122.1:8443/apis/quota.openshift.io/v1/clusterresourcequotas?resourceVersion=0: dial tcp 192.168.122.1:8443: getsockopt: connection refused
+E0201 15:34:15.280143   18169 reflector.go:201] github.com/openshift/origin/pkg/authorization/generated/informers/internalversion/factory.go:45: Failed to list *authorization.Policy: Get https://192.168.122.1:8443/apis/authorization.openshift.io/v1/policies?resourceVersion=0: dial tcp 192.168.122.1:8443: getsockopt: connection refused
+I0201 15:34:15.284448   18169 clusterquotamapping.go:160] Starting ClusterQuotaMappingController controller
+E0201 15:34:15.293619   18169 reflector.go:201] github.com/openshift/origin/pkg/authorization/generated/informers/internalversion/factory.go:45: Failed to list *authorization.ClusterPolicy: Get https://192.168.122.1:8443/apis/authorization.openshift.io/v1/clusterpolicies?resourceVersion=0: dial tcp 192.168.122.1:8443: getsockopt: connection refused
+E0201 15:34:15.293748   18169 reflector.go:201] github.com/openshift/origin/pkg/authorization/generated/informers/internalversion/factory.go:45: Failed to list *authorization.PolicyBinding: Get https://192.168.122.1:8443/apis/authorization.openshift.io/v1/policybindings?resourceVersion=0: dial tcp 192.168.122.1:8443: getsockopt: connection refused
+E0201 15:34:15.294108   18169 reflector.go:201] github.com/openshift/origin/pkg/authorization/generated/informers/internalversion/factory.go:45: Failed to list *authorization.ClusterPolicyBinding: Get https://192.168.122.1:8443/apis/authorization.openshift.io/v1/clusterpolicybindings?resourceVersion=0: dial tcp 192.168.122.1:8443: getsockopt: connection refused
+I0201 15:34:15.294495   18169 master.go:182] Starting OAuth2 API at /oauth
+I0201 15:34:15.294512   18169 master.go:190] Starting Web Console /console/
+W0201 15:34:15.462088   18169 genericapiserver.go:295] Skipping API autoscaling/v2alpha1 because it has no resources.
+W0201 15:34:15.505236   18169 genericapiserver.go:295] Skipping API rbac.authorization.k8s.io/v1alpha1 because it has no resources.
+I0201 15:34:15.789155   18169 openshift_apiserver.go:237] Starting Origin API at /apis/network.openshift.io/v1
+I0201 15:34:15.790180   18169 openshift_apiserver.go:237] Starting Origin API at /apis/route.openshift.io/v1
+I0201 15:34:15.791561   18169 openshift_apiserver.go:237] Starting Origin API at /apis/user.openshift.io/v1
+I0201 15:34:15.792984   18169 openshift_apiserver.go:237] Starting Origin API at /apis/apps.openshift.io/v1
+I0201 15:34:15.794150   18169 openshift_apiserver.go:237] Starting Origin API at /apis/security.openshift.io/v1
+I0201 15:34:15.796625   18169 openshift_apiserver.go:237] Starting Origin API at /apis/build.openshift.io/v1
+I0201 15:34:15.797630   18169 openshift_apiserver.go:237] Starting Origin API at /apis/quota.openshift.io/v1
+I0201 15:34:15.800042   18169 openshift_apiserver.go:237] Starting Origin API at /apis/image.openshift.io/v1
+I0201 15:34:15.806958   18169 openshift_apiserver.go:237] Starting Origin API at /apis/authorization.openshift.io/v1
+I0201 15:34:15.808432   18169 openshift_apiserver.go:237] Starting Origin API at /apis/template.openshift.io/v1
+I0201 15:34:15.892796   18169 openshift_apiserver.go:237] Starting Origin API at /apis/oauth.openshift.io/v1
+I0201 15:34:15.893324   18169 openshift_apiserver.go:237] Starting Origin API at /apis/project.openshift.io/v1
+I0201 15:34:15.908856   18169 openshift_apiserver.go:243] Started Origin API at /oapi/v1
+[restful] 2018/02/01 15:34:16 log.go:30: [restful/swagger] listing is available at https://192.168.122.1:8443/swaggerapi
+[restful] 2018/02/01 15:34:16 log.go:30: [restful/swagger] https://192.168.122.1:8443/swaggerui/ is mapped to folder /swagger-ui/
+E0201 15:34:16.133701   18169 controllermanager.go:337] Server isn't healthy yet.  Waiting a little while.
+E0201 15:34:16.280366   18169 reflector.go:201] github.com/openshift/origin/pkg/quota/generated/informers/internalversion/factory.go:45: Failed to list *quota.ClusterResourceQuota: Get https://192.168.122.1:8443/apis/quota.openshift.io/v1/clusterresourcequotas?resourceVersion=0: dial tcp 192.168.122.1:8443: getsockopt: connection refused
+I0201 15:34:16.282843   18169 serve.go:86] Serving securely on 0.0.0.0:8443
+W0201 15:34:16.338420   18169 lease_endpoint_reconciler.go:176] Resetting endpoints for master service "kubernetes" to [192.168.122.1]
+W0201 15:34:16.391516   18169 run_components.go:60] Binding DNS on port 8053 instead of 53, which may not be resolvable from all clients
+I0201 15:34:16.396719   18169 logs.go:41] skydns: ready for queries on cluster.local. for tcp4://0.0.0.0:8053 [rcache 0]
+I0201 15:34:16.396735   18169 logs.go:41] skydns: ready for queries on cluster.local. for udp4://0.0.0.0:8053 [rcache 0]
+I0201 15:34:16.493743   18169 run_components.go:86] DNS listening at 0.0.0.0:8053
+E0201 15:34:17.135628   18169 controllermanager.go:337] Server isn't healthy yet.  Waiting a little while.
+I0201 15:34:17.456755   18169 docker.go:364] Connecting to docker on unix:///var/run/docker.sock
+I0201 15:34:17.459617   18169 docker.go:384] Start docker client with request timeout=2m0s
+W0201 15:34:17.536594   18169 cni.go:157] Unable to update cni config: No networks found in /etc/cni/net.d
+I0201 15:34:17.701071   18169 node_config.go:367] DNS Bind to 192.168.122.1:53
+I0201 15:34:17.701174   18169 start_node.go:345] Starting node localhost.localdomain (v3.6.1+008f2d5)
+I0201 15:34:17.702833   18169 start_node.go:354] Connecting to API server https://192.168.122.1:8443
+I0201 15:34:17.726918   18169 docker.go:364] Connecting to docker on unix:///var/run/docker.sock
+I0201 15:34:17.727043   18169 docker.go:384] Start docker client with request timeout=2m0s
+I0201 15:34:17.779749   18169 node.go:134] Connecting to Docker at unix:///var/run/docker.sock
+I0201 15:34:18.263802   18169 feature_gate.go:144] feature gates: map[]
+I0201 15:34:18.291360   18169 manager.go:143] cAdvisor running in container: "/"
+I0201 15:34:18.310572   18169 start_master.go:715] Started serviceaccount-token controller
+I0201 15:34:18.380832   18169 node.go:348] Using iptables Proxier.
+W0201 15:34:19.033132   18169 node.go:488] Failed to retrieve node info: nodes "localhost.localdomain" not found
+W0201 15:34:19.070994   18169 proxier.go:309] invalid nodeIP, initializing kube-proxy with 127.0.0.1 as nodeIP
+W0201 15:34:19.071023   18169 proxier.go:314] clusterCIDR not specified, unable to distinguish between internal and external traffic
+I0201 15:34:19.071162   18169 node.go:380] Tearing down userspace rules.
+I0201 15:34:19.102680   18169 trace.go:76] Trace[1751738770]: "List /api/v1/namespaces/kube-system/secrets" (started: 2018-02-01 15:34:18.475753993 -0500 EST) (total time: 621.59287ms):
+Trace[1751738770]: [613.480991ms] [613.404057ms] Listing from storage done
+W0201 15:34:19.135779   18169 manager.go:151] unable to connect to Rkt api service: rkt: cannot tcp Dial rkt api service: dial tcp [::1]:15441: getsockopt: connection refused
+I0201 15:34:19.425095   18169 fs.go:117] Filesystem partitions: map[/dev/mapper/rhel-root:{mountpoint:/ major:253 minor:0 fsType:xfs blockSize:0} /dev/sda1:{mountpoint:/boot major:8 minor:1 fsType:xfs blockSize:0} /dev/mapper/rhel00-root00:{mountpoint:/var major:253 minor:2 fsType:xfs blockSize:0} /dev/mapper/rhel-home:{mountpoint:/home major:253 minor:3 fsType:xfs blockSize:0} /dev/sdb1:{mountpoint:/run/media/redhat/e858fd44-3882-4c67-bbda-1e7d3dab1bb0 major:8 minor:17 fsType:ext4 blockSize:0}]
+I0201 15:34:19.453177   18169 manager.go:198] Machine: {NumCores:2 CpuFrequency:2494226 MemoryCapacity:1036414976 MachineID:490778965a562c4782ed037ce8c6b19e SystemUUID:49077896-5A56-2C47-82ED-037CE8C6B19E BootID:85a480e2-4f1e-4d2d-b83d-12372ac6440d Filesystems:[{Device:/dev/mapper/rhel-root DeviceMajor:253 DeviceMinor:0 Capacity:26830438400 Type:vfs Inodes:13107200 HasInodes:true} {Device:/dev/sda1 DeviceMajor:8 DeviceMinor:1 Capacity:1063256064 Type:vfs Inodes:524288 HasInodes:true} {Device:/dev/mapper/rhel00-root00 DeviceMajor:253 DeviceMinor:2 Capacity:10726932480 Type:vfs Inodes:5242880 HasInodes:true} {Device:/dev/mapper/rhel-home DeviceMajor:253 DeviceMinor:3 Capacity:21472735232 Type:vfs Inodes:10489856 HasInodes:true} {Device:/dev/sdb1 DeviceMajor:8 DeviceMinor:17 Capacity:15126241280 Type:vfs Inodes:946560 HasInodes:true}] DiskMap:map[253:0:{Name:dm-0 Major:253 Minor:0 Size:26843545600 Scheduler:none} 253:1:{Name:dm-1 Major:253 Minor:1 Size:2147483648 Scheduler:none} 253:2:{Name:dm-2 Major:253 Minor:2 Size:10737418240 Scheduler:none} 253:3:{Name:dm-3 Major:253 Minor:3 Size:21483225088 Scheduler:none} 8:0:{Name:sda Major:8 Minor:0 Size:68719476736 Scheduler:cfq} 8:16:{Name:sdb Major:8 Minor:16 Size:15504900096 Scheduler:deadline}] NetworkDevices:[{Name:eth0 MacAddress:00:1c:42:5b:8c:62 Speed:0 Mtu:1500} {Name:virbr0 MacAddress:52:54:00:7c:30:8d Speed:0 Mtu:1500} {Name:virbr0-nic MacAddress:52:54:00:7c:30:8d Speed:0 Mtu:1500}] Topology:[{Id:0 Memory:1073258496 Cores:[{Id:0 Threads:[0] Caches:[]} {Id:1 Threads:[1] Caches:[]}] Caches:[{Size:6291456 Type:Unified Level:3} {Size:134217728 Type:Unified Level:4}]}] CloudProvider:Unknown InstanceType:Unknown InstanceID:None}
+I0201 15:34:19.480522   18169 manager.go:204] Version: {KernelVersion:3.10.0-693.el7.x86_64 ContainerOsVersion:Red Hat Enterprise Linux DockerVersion:1.12.6 DockerAPIVersion:1.24 CadvisorVersion: CadvisorRevision:}
+I0201 15:34:19.541120   18169 server.go:509] --cgroups-per-qos enabled, but --cgroup-root was not specified.  defaulting to /
+W0201 15:34:19.691423   18169 container_manager_linux.go:217] Running with swap on is not supported, please disable swap! This will be a fatal error by default starting in K8s v1.6! In the meantime, you can opt-in to making this a fatal error by enabling --experimental-fail-swap-on.
+I0201 15:34:19.698270   18169 container_manager_linux.go:244] container manager verified user specified cgroup-root exists: /
+I0201 15:34:19.698364   18169 container_manager_linux.go:249] Creating Container Manager object based on Node Config: {RuntimeCgroupsName: SystemCgroupsName: KubeletCgroupsName: ContainerRuntime:docker CgroupsPerQOS:true CgroupRoot:/ CgroupDriver:systemd ProtectKernelDefaults:false EnableCRI:true NodeAllocatableConfig:{KubeReservedCgroupName: SystemReservedCgroupName: EnforceNodeAllocatable:map[pods:{}] KubeReserved:map[] SystemReserved:map[] HardEvictionThresholds:[{Signal:memory.available Operator:LessThan Value:{Quantity:100Mi Percentage:0} GracePeriod:0s MinReclaim:<nil>}]} ExperimentalQOSReserved:map[]}
+I0201 15:34:19.709409   18169 kubelet.go:265] Watching apiserver
+W0201 15:34:20.059670   18169 kubelet_network.go:70] Hairpin mode set to "promiscuous-bridge" but kubenet is not enabled, falling back to "hairpin-veth"
+I0201 15:34:20.059784   18169 kubelet.go:494] Hairpin mode set to "hairpin-veth"
+W0201 15:34:20.128300   18169 cni.go:157] Unable to update cni config: No networks found in /etc/cni/net.d
+I0201 15:34:20.279961   18169 node.go:480] Started Kubernetes Proxy on 0.0.0.0
+I0201 15:34:20.288736   18169 docker_service.go:184] Docker cri networking managed by kubernetes.io/no-op
+I0201 15:34:20.293207   18169 node.go:316] Starting DNS on 192.168.122.1:53
+I0201 15:34:20.296320   18169 logs.go:41] skydns: ready for queries on cluster.local. for tcp://192.168.122.1:53 [rcache 0]
+I0201 15:34:20.296340   18169 logs.go:41] skydns: ready for queries on cluster.local. for udp://192.168.122.1:53 [rcache 0]
+I0201 15:34:20.296528   18169 logs.go:41] skydns: listen udp 192.168.122.1:53: bind: address already in use
 
 
