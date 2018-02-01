@@ -26,3 +26,10 @@ FAIL
    Error: error pulling Docker image openshift/origin:v3.6.0
    Caused By:
      Error: Error response from daemon: {"message":"Get https://registry-1.docker.io/v2/: dial tcp: lookup registry-1.docker.io on [::1]:53: read udp [::1]:44153->[::1]:53: read: connection refused"}
+
+Error: did not detect an --insecure-registry argument on the Docker daemon
+   Solution:
+
+     Ensure that the Docker daemon is running with the following argument:
+     	--insecure-registry 172.30.0.0/16
+
