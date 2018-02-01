@@ -47,4 +47,29 @@ Error: did not detect an --insecure-registry argument on the Docker daemon
 
      Ensure that the Docker daemon is running with the following argument:
      	--insecure-registry 172.30.0.0/16
+      
+      
+      [redhat@localhost ~]$ oc cluster up
+Starting OpenShift using openshift/origin:v3.6.0 ...
+-- Checking OpenShift client ... OK
+-- Checking Docker client ... OK
+-- Checking Docker version ... OK
+-- Checking for existing OpenShift container ... OK
+-- Checking for openshift/origin:v3.6.0 image ... OK
+-- Checking Docker daemon configuration ... OK
+-- Checking for available ports ... 
+   WARNING: Binding DNS on port 8053 instead of 53, which may not be resolvable from all clients.
+-- Checking type of volume mount ... 
+   Using nsenter mounter for OpenShift volumes
+-- Creating host directories ... OK
+-- Finding server IP ... 
+   Using 127.0.0.1 as the server IP
+-- Starting OpenShift container ... 
+   Creating initial OpenShift configuration
+   Starting OpenShift using container 'origin'
+FAIL
+   Error: could not start OpenShift container "origin"
+   Details:
+     No log available from "origin" container
+
 
