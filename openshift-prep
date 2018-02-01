@@ -1,0 +1,28 @@
+OpenShift Prep
+
+git dependencies
+---> Package git.x86_64 0:1.8.3.1-12.el7_4 will be installed
+--> Processing Dependency: perl-Git = 1.8.3.1-12.el7_4 for package: git-1.8.3.1-12.el7_4.x86_64
+--> Processing Dependency: perl(Git) for package: git-1.8.3.1-12.el7_4.x86_64
+--> Processing Dependency: perl(Term::ReadKey) for package: git-1.8.3.1-12.el7_4.x86_64
+--> Running transaction check
+---> Package perl-Git.noarch 0:1.8.3.1-12.el7_4 will be installed
+---> Package perl-TermReadKey.x86_64 0:2.30-20.el7 will be installed
+Package perl-Error.noarch 1:0.17020-2.el7 will be installed
+---> Package perl-Git.noarch 0:1.8.3.1-12.el7_4 will be installed
+---> Package perl-TermReadKey.x86_64 0:2.30-20.el7 will be installed
+
+
+[redhat@localhost ~]$ oc cluster up
+Starting OpenShift using openshift/origin:v3.6.0 ...
+Pulling image openshift/origin:v3.6.0
+-- Checking OpenShift client ... OK
+-- Checking Docker client ... OK
+-- Checking Docker version ... OK
+-- Checking for existing OpenShift container ... OK
+-- Checking for openshift/origin:v3.6.0 image ... 
+   Pulling image openshift/origin:v3.6.0
+FAIL
+   Error: error pulling Docker image openshift/origin:v3.6.0
+   Caused By:
+     Error: Error response from daemon: {"message":"Get https://registry-1.docker.io/v2/: dial tcp: lookup registry-1.docker.io on [::1]:53: read udp [::1]:44153->[::1]:53: read: connection refused"}
