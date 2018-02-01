@@ -1,5 +1,10 @@
 OpenShift Prep
 
+
+docker install
+subscription-manager repos --enable=rhel-7-server-extras-rpms
+sudo yum install docker
+
 git dependencies
 ---> Package git.x86_64 0:1.8.3.1-12.el7_4 will be installed
 --> Processing Dependency: perl-Git = 1.8.3.1-12.el7_4 for package: git-1.8.3.1-12.el7_4.x86_64
