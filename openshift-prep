@@ -76,5 +76,19 @@ FAIL
    Error: could not start OpenShift container "origin"
    Details:
      No log available from "origin" container
+     
+     
+     W0201 02:24:51.572509    4015 start_master.go:297] Warning: assetConfig.loggingPublicURL: Invalid value: "": required to view aggregated container logs in the console, master start will continue.
+W0201 02:24:51.572938    4015 start_master.go:297] Warning: assetConfig.metricsPublicURL: Invalid value: "": required to view cluster metrics in the console, master start will continue.
+W0201 02:24:51.572951    4015 start_master.go:297] Warning: auditConfig.auditFilePath: Required value: audit can not be logged to a separate file, master start will continue.
+I0201 02:24:51.578477    4015 plugins.go:101] No cloud provider specified.
+E0201 02:24:51.584102    4015 controllermanager.go:337] Server isn't healthy yet.  Waiting a little while.
+2018-02-01 02:24:51.588082 I | etcdserver/api/v3rpc: grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 192.168.122.1:4001: getsockopt: connection refused"; Reconnecting to {192.168.122.1:4001 <nil>}
+2018-02-01 02:24:51.593435 I | etcdserver/api/v3rpc: grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 192.168.122.1:4001: getsockopt: connection refused"; Reconnecting to {192.168.122.1:4001 <nil>}
+2018-02-01 02:24:51.593954 I | etcdserver/api/v3rpc: grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 192.168.122.1:4001: getsockopt: connection refused"; Reconnecting to {192.168.122.1:4001 <nil>}
+2018-02-01 02:24:51.602181 I | etcdserver/api/v3rpc: grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 192.168.122.1:4001: getsockopt: connection refused"; Reconnecting to {192.168.122.1:4001 <nil>}
+2018-02-01 02:24:51.602487 I | etcdserver/api/v3rpc: grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 192.168.122.1:4001: getsockopt: connection refused"; Reconnecting to {192.168.122.1:4001 <nil>}
+F0201 02:24:51.602614    4015 start_allinone.go:99] Server could not start: Unable to find suitable network address.error='Unable to select an IP.'. Try to set the AdvertiseAddress directly or provide a valid BindAddress to fix this.
+
 
 
