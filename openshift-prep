@@ -219,4 +219,4 @@ I0201 15:34:20.296320   18169 logs.go:41] skydns: ready for queries on cluster.l
 I0201 15:34:20.296340   18169 logs.go:41] skydns: ready for queries on cluster.local. for udp://192.168.122.1:53 [rcache 0]
 I0201 15:34:20.296528   18169 logs.go:41] skydns: listen udp 192.168.122.1:53: bind: address already in use
 
-
+<script src="https://gist.github.com/ishuverma/c655e851b70d8a4b4302bfc36d134ddb.js"></script>
